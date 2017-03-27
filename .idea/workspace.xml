@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/smtsolver.cpp" line="189" mnemonic="5" />
+    <bookmark url="file://$PROJECT_DIR$/smtsolver.cpp" line="188" mnemonic="5" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
@@ -18,38 +18,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list id="d9caa81c-75f1-44d8-aac1-da611d11bd63" name="Default" comment="finish basic function">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/EX.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/EX.cbp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/z3.log" />
-    </list>
+    <list id="d9caa81c-75f1-44d8-aac1-da611d11bd63" name="Default" comment="finish basic function" />
     <list default="true" id="10ea2c8d-5028-482c-a3c2-e6cfb7815ef2" name="Rejected commit: Default" comment="finish basic function">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/EX" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/calutime.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/calutime.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/filepath.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/processpath.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smtsolver.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smtsolver.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stringint.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stringint.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/threadpool.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/threadpool.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smtsolver.cpp" afterPath="$PROJECT_DIR$/smtsolver.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/cmake-build-debug/Makefile" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +55,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smtsolver.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="smtsolver.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smtsolver.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="98" column="12" lean-forward="false" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
+            <state relative-caret-position="1195">
+              <caret line="97" column="9" lean-forward="false" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,7 +119,6 @@
         <option value="$PROJECT_DIR$/stringint.cpp" />
         <option value="$PROJECT_DIR$/test/test.cpp" />
         <option value="$PROJECT_DIR$/processpath.cpp" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/calutime.h" />
         <option value="$PROJECT_DIR$/calutime.cpp" />
         <option value="$PROJECT_DIR$/threadpool.h" />
@@ -143,6 +130,7 @@
         <option value="$PROJECT_DIR$/parser.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/smtsolver.cpp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -444,12 +432,12 @@
       <workItem from="1490443617755" duration="765000" />
       <workItem from="1490447825495" duration="2857000" />
       <workItem from="1490453356172" duration="2281000" />
-      <workItem from="1490536254074" duration="5954000" />
+      <workItem from="1490536254074" duration="6285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123522000" />
+    <option name="totallyTimeSpent" value="123853000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -858,14 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/filepath.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -904,11 +884,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smtsolver.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="98" column="12" lean-forward="false" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
+        <state relative-caret-position="1195">
+          <caret line="97" column="9" lean-forward="false" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
           <folding>
             <element signature="e#40#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

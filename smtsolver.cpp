@@ -96,7 +96,6 @@ void visit2(expr const & e)
         }
         while(!sk.empty())
         {
-            
         }
     }
 }
