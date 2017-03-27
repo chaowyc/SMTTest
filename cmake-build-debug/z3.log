@@ -1,0 +1,32 @@
+V "4.5.1.0 Mar 14 2017"
+M "parser_example4"
+R
+C 3
+= 0xda1cf28
+R
+P 0xda1cf28
+S "model"
+S "true"
+C 5
+R
+P 0xda1cf28
+C 6
+= 0xda1cf78
+R
+P 0xda1cf28
+C 4
+R
+P 0xda1cf78
+S "/home/chaowyc/z3Guide/test_dir/3/4/5/Sudoku/2016861/sudoku.in3.smt2"
+U 0
+s 0
+p 0
+U 0
+s 0
+p 0
+C 324
+= 0xfc58848
+R
+P 0xda1cf78
+P 0xfc58848
+C 318
