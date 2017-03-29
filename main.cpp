@@ -9,81 +9,76 @@
 #include <ctime>
 #include <sys/time.h>
 #include <fstream>
-#include "filepath.h"
-#include "smtsolver.h"
-#include "stringint.h"
+#include "FilePath.h"
+#include "SmtSolver.h"
+#include "StringInt.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdarg.h>
 #include<memory.h>
 #include<setjmp.h>
 #include "z3.h"
-#include "calutime.h"
+#include "CaluTime.h"
 #include "ctpl_stl.h"
-#include "parser.h"
+#include "FilePath.h"
 
 using namespace std;
 
-void mmm(int id, const std::string & s, int ii) {
-    std::cout << "mmm function " << id << ' ' << s << ii << '\n';
-}
+//bool subdirectory_flag = false;
+
+int solved_case_num = 0;
 
 int main(int argc, char *argv[])
 {
-    //::testing::InitGoogleTest(&argc, argv);
-    // argv[1] is the smt file/directory path
+    bool flag = false;
 
-    ctpl::thread_pool p(4);
-    for(int i = 0; i < argc; i++)
+    /*
+     *     argv[1] smt input file/directory
+     *     argv[2] smt output directory
+     */
+
+    if(argc == 3)
     {
+        // has output directory
+        flag = true;
+    }
+    ctpl::thread_pool pp(4);
+    if(IsDir(argv[1]))
+    {
+        // is directory
+        TraverseDir(argv[1]);
+        DeleteCSV();
+        if(flag)
+        {
+            for(int i = 0; i < all_SMT_case_num; i++)
+            {
+                SmtSolver ssolver(SMT_file_list[i], argv[2]);
+                ssolver.CollectAttr(1, i);
+            }
 
-        char* path = argv[i];
-        printf("excute argv %d/%d\n", i, argc);
-        for(int i = 0; i < file_num; i++)
-        {
-            file_list[i] = '\0';
         }
-        traverse_file(path);
-        for(int i = 0; i < file_num; i++)
+        else
         {
-            //calutime timer;
-            //timer.timer_begin();
-            printf("%s\n", file_list[i]);
-            p.push(collect_attr, file_list[i], i);
-            //timer.timer_end();
-            //printf("=======================argv %d spend time %f============================\n", i, timer.time_span());
+            for (int i = 0; i < all_SMT_case_num; ++i)
+            {
+                SmtSolver ssolver(SMT_file_list[i]);
+                ssolver.CollectAttr(1, i);
+            }
         }
     }
-
-    /*
-     * rest
-     */
-    /*
-    parser smt_parser("/home/chaowyc/z3Guide/QF_BV/brummayerbiere/367411/bitrev0032.smt2");
-    smt_parser.print_string();
-    */
-
-
-    /*
-    ctpl::thread_pool p(8);
-    string s = "worked";
-    p.push(mmm, s, 9);
-
-    for(int i = 1; i < argc; i++)
+    else
     {
-        file_num = 0;
-        for(int i = 1; i < file_num; i++)
+        // is single file
+        if(flag)
         {
-            file_list[i] = {'\0'};
-        }
-        traverse_file(argv[i]);
-
-        for(int i = 0; i < file_num; i++)
+            SmtSolver ssolver(argv[1], argv[2]);
+            ssolver.CollectAttr(-1, -1);
+        } else
         {
-            p.push(test_pool, file_list[i]);
+            SmtSolver ssolver(argv[1]);
+            ssolver.CollectAttr(-1, -1);
         }
     }
-     */
 
     return 0;
     //return 0;

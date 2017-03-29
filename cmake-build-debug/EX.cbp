@@ -84,37 +84,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/calutime.cpp">
+		<Unit filename="/home/chaowyc/CLionProjects/EX/CaluTime.cpp">
 			<Option target="EX"/>
 		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/calutime.h">
+		<Unit filename="/home/chaowyc/CLionProjects/EX/CaluTime.h">
 			<Option target="EX"/>
 		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/filepath.h">
+		<Unit filename="/home/chaowyc/CLionProjects/EX/FilePath.cpp">
+			<Option target="EX"/>
+		</Unit>
+		<Unit filename="/home/chaowyc/CLionProjects/EX/FilePath.h">
+			<Option target="EX"/>
+		</Unit>
+		<Unit filename="/home/chaowyc/CLionProjects/EX/SmtSolver.cpp">
+			<Option target="EX"/>
+		</Unit>
+		<Unit filename="/home/chaowyc/CLionProjects/EX/SmtSolver.h">
+			<Option target="EX"/>
+		</Unit>
+		<Unit filename="/home/chaowyc/CLionProjects/EX/StringInt.cpp">
+			<Option target="EX"/>
+		</Unit>
+		<Unit filename="/home/chaowyc/CLionProjects/EX/StringInt.h">
 			<Option target="EX"/>
 		</Unit>
 		<Unit filename="/home/chaowyc/CLionProjects/EX/main.cpp">
-			<Option target="EX"/>
-		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/parser.cpp">
-			<Option target="EX"/>
-		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/parser.h">
-			<Option target="EX"/>
-		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/processpath.cpp">
-			<Option target="EX"/>
-		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/smtsolver.cpp">
-			<Option target="EX"/>
-		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/smtsolver.h">
-			<Option target="EX"/>
-		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/stringint.cpp">
-			<Option target="EX"/>
-		</Unit>
-		<Unit filename="/home/chaowyc/CLionProjects/EX/stringint.h">
 			<Option target="EX"/>
 		</Unit>
 		<Unit filename="/home/chaowyc/CLionProjects/EX/threadpool.cpp">

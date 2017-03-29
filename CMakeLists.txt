@@ -4,7 +4,7 @@ project(EX)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp filepath.h processpath.cpp smtsolver.h smtsolver.cpp stringint.cpp stringint.h calutime.cpp calutime.h threadpool.cpp threadpool.h parser.cpp parser.h)
+set(SOURCE_FILES main.cpp FilePath.h FilePath.cpp SmtSolver.h SmtSolver.cpp StringInt.cpp StringInt.h CaluTime.cpp CaluTime.h threadpool.cpp threadpool.h)
 
 find_package(Threads)
 add_executable(EX ${SOURCE_FILES})

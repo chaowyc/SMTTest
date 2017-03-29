@@ -10,16 +10,20 @@
 #include <map>
 #include <ctime>
 #include <fstream>
-#include "filepath.h"
+#include "FilePath.h"
 
-char *file_list[MAXFILENUM];
-int file_num = 0;
+char *SMT_file_list[MAXFILENUM];
+char *CSV_file_list[MAXFILENUM];
+int all_SMT_case_num = 0;
+int all_CSV_file_num = 0;
+// indicate whether the given directory has subdirectories, assume it hasn't subdirectories
+//extern bool subdirectory_flag;
 
 /*
  * connect the str1 and str2
  */
 
-char* str_contact(const char* str1, const char* str2)
+char* StrContact(const char* str1, const char* str2)
 {
     char* result = NULL;
     result = (char*)malloc(strlen(str1) + strlen(str2) + 1);
@@ -42,7 +46,7 @@ char* str_contact(const char* str1, const char* str2)
  * return if path is a file or dirctory
  */
 
-int is_dir(char* path)
+int IsDir(char* path)
 {
     struct stat st;
     stat(path, &st);
@@ -59,10 +63,10 @@ int is_dir(char* path)
 /*
  * traverse the file and subdirctory on giving path
  */
-void traverse_file(char* file_path)
+void TraverseDir(char* file_path)
 {
     //std::vector<std::string> file_list;
-    file_path = str_contact(file_path, "/");
+    file_path = StrContact(file_path, "/");
     DIR* dp;
     struct dirent* filename;
     dp = opendir(file_path);
@@ -73,17 +77,39 @@ void traverse_file(char* file_path)
     }
     while(filename = readdir(dp))
     {
+        char* path = StrContact(file_path, filename->d_name);
         if(filename->d_name[0] == '.')
             continue;
-        if(is_txt(filename->d_name))
+        if(IsTXT(filename->d_name))
             continue;
-        if(is_csv(filename->d_name))
+        if(IsCSV(filename->d_name))
+        {
+            char *tmp = (char*)malloc(strlen(path) + 1);
+            if(!tmp)
+            {
+                std::cout << "alloc memory for path failed" << std::endl;
+                exit(1);
+            }
+            strcpy(tmp, path);
+            CSV_file_list[all_CSV_file_num++] = tmp;
             continue;
-        char* path = str_contact(file_path, filename->d_name);
-        if(is_dir(path))
+        }
+        //char* path = StrContact(file_path, filename->d_name);
+        if(IsDir(path))
         {
             //std::cout << path << " dirctory" << std::endl;
-            traverse_file(path);
+            // the directory does has subdirectories
+            /*
+            if (!strcmp(filename->d_name, "smtoutput"))
+            {
+                continue;
+            }
+            else
+            {
+                subdirectory_flag = true;
+                traverse_file(path);
+            }*/
+            TraverseDir(path);
         }
         else
         {
@@ -94,7 +120,7 @@ void traverse_file(char* file_path)
                 exit(1);
             }
             strcpy(tmp, path);
-            file_list[file_num++] = tmp;
+            SMT_file_list[all_SMT_case_num++] = tmp;
             std::cout << path << std::endl;
         }
     }
@@ -102,28 +128,9 @@ void traverse_file(char* file_path)
     return;
 }
 
-void get_output_path(char *file_path, char *output)
-{
-    int i = 0;
-    int j = 0;
-    // reach the tail of file_path
-    while((file_path[i]) != '\0')
-    {
-        if(file_path[i] == '/')
-        {
-            j = i + 1;
-        }
-        i++;
-    }
-    int m = 0;
-    while(m < j)
-    {
-        output[m] = file_path[m];
-        m++;
-    }
-}
 
-bool is_txt(char *file_path)
+
+bool IsTXT(const char *file_path)
 {
     int i = 0;
     while(file_path[i] != '\0')
@@ -139,7 +146,7 @@ bool is_txt(char *file_path)
 
 }
 
-bool is_csv(char *file_path)
+bool IsCSV(const char *file_path)
 {
     int i = 0;
     while(file_path[i] != '\0')
@@ -153,4 +160,18 @@ bool is_csv(char *file_path)
         return false;
     }
 }
+
+void DeleteCSV()
+{
+    int status;
+    for(int i = 0; i < all_CSV_file_num; i++)
+    {
+        status = remove(CSV_file_list[i]);
+        if(status != 0)
+        {
+            std::cout << "delete error" << std::endl;
+        }
+    }
+}
+
 

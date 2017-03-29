@@ -123,32 +123,113 @@ EX/fast:
 	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/build
 .PHONY : EX/fast
 
-calutime.o: calutime.cpp.o
+CaluTime.o: CaluTime.cpp.o
 
-.PHONY : calutime.o
+.PHONY : CaluTime.o
 
 # target to build an object file
-calutime.cpp.o:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/calutime.cpp.o
-.PHONY : calutime.cpp.o
+CaluTime.cpp.o:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/CaluTime.cpp.o
+.PHONY : CaluTime.cpp.o
 
-calutime.i: calutime.cpp.i
+CaluTime.i: CaluTime.cpp.i
 
-.PHONY : calutime.i
+.PHONY : CaluTime.i
 
 # target to preprocess a source file
-calutime.cpp.i:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/calutime.cpp.i
-.PHONY : calutime.cpp.i
+CaluTime.cpp.i:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/CaluTime.cpp.i
+.PHONY : CaluTime.cpp.i
 
-calutime.s: calutime.cpp.s
+CaluTime.s: CaluTime.cpp.s
 
-.PHONY : calutime.s
+.PHONY : CaluTime.s
 
 # target to generate assembly for a file
-calutime.cpp.s:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/calutime.cpp.s
-.PHONY : calutime.cpp.s
+CaluTime.cpp.s:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/CaluTime.cpp.s
+.PHONY : CaluTime.cpp.s
+
+FilePath.o: FilePath.cpp.o
+
+.PHONY : FilePath.o
+
+# target to build an object file
+FilePath.cpp.o:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/FilePath.cpp.o
+.PHONY : FilePath.cpp.o
+
+FilePath.i: FilePath.cpp.i
+
+.PHONY : FilePath.i
+
+# target to preprocess a source file
+FilePath.cpp.i:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/FilePath.cpp.i
+.PHONY : FilePath.cpp.i
+
+FilePath.s: FilePath.cpp.s
+
+.PHONY : FilePath.s
+
+# target to generate assembly for a file
+FilePath.cpp.s:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/FilePath.cpp.s
+.PHONY : FilePath.cpp.s
+
+SmtSolver.o: SmtSolver.cpp.o
+
+.PHONY : SmtSolver.o
+
+# target to build an object file
+SmtSolver.cpp.o:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/SmtSolver.cpp.o
+.PHONY : SmtSolver.cpp.o
+
+SmtSolver.i: SmtSolver.cpp.i
+
+.PHONY : SmtSolver.i
+
+# target to preprocess a source file
+SmtSolver.cpp.i:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/SmtSolver.cpp.i
+.PHONY : SmtSolver.cpp.i
+
+SmtSolver.s: SmtSolver.cpp.s
+
+.PHONY : SmtSolver.s
+
+# target to generate assembly for a file
+SmtSolver.cpp.s:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/SmtSolver.cpp.s
+.PHONY : SmtSolver.cpp.s
+
+StringInt.o: StringInt.cpp.o
+
+.PHONY : StringInt.o
+
+# target to build an object file
+StringInt.cpp.o:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/StringInt.cpp.o
+.PHONY : StringInt.cpp.o
+
+StringInt.i: StringInt.cpp.i
+
+.PHONY : StringInt.i
+
+# target to preprocess a source file
+StringInt.cpp.i:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/StringInt.cpp.i
+.PHONY : StringInt.cpp.i
+
+StringInt.s: StringInt.cpp.s
+
+.PHONY : StringInt.s
+
+# target to generate assembly for a file
+StringInt.cpp.s:
+	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/StringInt.cpp.s
+.PHONY : StringInt.cpp.s
 
 main.o: main.cpp.o
 
@@ -176,114 +257,6 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-parser.o: parser.cpp.o
-
-.PHONY : parser.o
-
-# target to build an object file
-parser.cpp.o:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/parser.cpp.o
-.PHONY : parser.cpp.o
-
-parser.i: parser.cpp.i
-
-.PHONY : parser.i
-
-# target to preprocess a source file
-parser.cpp.i:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/parser.cpp.i
-.PHONY : parser.cpp.i
-
-parser.s: parser.cpp.s
-
-.PHONY : parser.s
-
-# target to generate assembly for a file
-parser.cpp.s:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/parser.cpp.s
-.PHONY : parser.cpp.s
-
-processpath.o: processpath.cpp.o
-
-.PHONY : processpath.o
-
-# target to build an object file
-processpath.cpp.o:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/processpath.cpp.o
-.PHONY : processpath.cpp.o
-
-processpath.i: processpath.cpp.i
-
-.PHONY : processpath.i
-
-# target to preprocess a source file
-processpath.cpp.i:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/processpath.cpp.i
-.PHONY : processpath.cpp.i
-
-processpath.s: processpath.cpp.s
-
-.PHONY : processpath.s
-
-# target to generate assembly for a file
-processpath.cpp.s:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/processpath.cpp.s
-.PHONY : processpath.cpp.s
-
-smtsolver.o: smtsolver.cpp.o
-
-.PHONY : smtsolver.o
-
-# target to build an object file
-smtsolver.cpp.o:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/smtsolver.cpp.o
-.PHONY : smtsolver.cpp.o
-
-smtsolver.i: smtsolver.cpp.i
-
-.PHONY : smtsolver.i
-
-# target to preprocess a source file
-smtsolver.cpp.i:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/smtsolver.cpp.i
-.PHONY : smtsolver.cpp.i
-
-smtsolver.s: smtsolver.cpp.s
-
-.PHONY : smtsolver.s
-
-# target to generate assembly for a file
-smtsolver.cpp.s:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/smtsolver.cpp.s
-.PHONY : smtsolver.cpp.s
-
-stringint.o: stringint.cpp.o
-
-.PHONY : stringint.o
-
-# target to build an object file
-stringint.cpp.o:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/stringint.cpp.o
-.PHONY : stringint.cpp.o
-
-stringint.i: stringint.cpp.i
-
-.PHONY : stringint.i
-
-# target to preprocess a source file
-stringint.cpp.i:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/stringint.cpp.i
-.PHONY : stringint.cpp.i
-
-stringint.s: stringint.cpp.s
-
-.PHONY : stringint.s
-
-# target to generate assembly for a file
-stringint.cpp.s:
-	$(MAKE) -f CMakeFiles/EX.dir/build.make CMakeFiles/EX.dir/stringint.cpp.s
-.PHONY : stringint.cpp.s
 
 threadpool.o: threadpool.cpp.o
 
@@ -321,24 +294,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... EX"
-	@echo "... calutime.o"
-	@echo "... calutime.i"
-	@echo "... calutime.s"
+	@echo "... CaluTime.o"
+	@echo "... CaluTime.i"
+	@echo "... CaluTime.s"
+	@echo "... FilePath.o"
+	@echo "... FilePath.i"
+	@echo "... FilePath.s"
+	@echo "... SmtSolver.o"
+	@echo "... SmtSolver.i"
+	@echo "... SmtSolver.s"
+	@echo "... StringInt.o"
+	@echo "... StringInt.i"
+	@echo "... StringInt.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... parser.o"
-	@echo "... parser.i"
-	@echo "... parser.s"
-	@echo "... processpath.o"
-	@echo "... processpath.i"
-	@echo "... processpath.s"
-	@echo "... smtsolver.o"
-	@echo "... smtsolver.i"
-	@echo "... smtsolver.s"
-	@echo "... stringint.o"
-	@echo "... stringint.i"
-	@echo "... stringint.s"
 	@echo "... threadpool.o"
 	@echo "... threadpool.i"
 	@echo "... threadpool.s"
