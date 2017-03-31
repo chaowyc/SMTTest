@@ -37,8 +37,6 @@ public:
 
     ~SmtSolver();
 
-    void GetOutputPath(const char* file_path, char* output, char* smt_case_name);
-
     void TraverseAST(int id, expr const & e);
 
     void PushSolver();

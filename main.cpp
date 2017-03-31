@@ -42,27 +42,37 @@ int main(int argc, char *argv[])
         // has output directory
         flag = true;
     }
-    ctpl::thread_pool pp(4);
+    //ctpl::thread_pool pp(4);
     if(IsDir(argv[1]))
     {
         // is directory
         TraverseDir(argv[1]);
-        DeleteCSV();
+        //DeleteCSV();
         if(flag)
         {
             for(int i = 0; i < all_SMT_case_num; i++)
             {
                 SmtSolver ssolver(SMT_file_list[i], argv[2]);
                 ssolver.CollectAttr(1, i);
+                //pp.push([&](int id){ssolver.CollectAttr(id, i);});
             }
-
         }
         else
         {
             for (int i = 0; i < all_SMT_case_num; ++i)
             {
-                SmtSolver ssolver(SMT_file_list[i]);
-                ssolver.CollectAttr(1, i);
+                char tmp_path[PATHLENGTH] = {'\0'};
+                char tmp_name[PATHLENGTH] = {'\0'};
+                GetOutputPath(SMT_file_list[i], tmp_path, tmp_name);
+                if(!ContinueLastTime(tmp_path))
+                {
+                    SmtSolver ssolver(SMT_file_list[i]);
+                    ssolver.CollectAttr(1, i);
+                } else
+                {
+                    printf("%s already has result!\n", SMT_file_list[i]);
+                    continue;
+                }
             }
         }
     }

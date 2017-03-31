@@ -15,6 +15,7 @@
 #include "CaluTime.h"
 #include "StringInt.h"
 #include <stack>
+
 using namespace z3;
 
 extern int solved_case_num;
@@ -63,9 +64,12 @@ void SmtSolver::TraverseAST(int id, expr const &e)
 {
     context ctx;
     //std::cout << e << endl;
+    // unor
     std::map<std::string, int > unique_map;
+    //std::unordered_map<std::string, int> unique_map;
     std::string str = Z3_ast_to_string(ctx, e);
     unique_map[str] = 1;
+    //unique_map[str] = 1;
     std::stack<expr> sk;
     long int count = 1;
     if(e.is_app())
@@ -229,7 +233,7 @@ void SmtSolver::CollectAttr(int id, int index)
     } else
     {
         printf("completed\n");
-        printf("-----------------------------------spend time :%f----------------------------\n", timer.TimerSpan());
+        printf("------------------------------------spend time :%f----------------------------\n", timer.TimerSpan());
     }
 
 }
@@ -244,30 +248,6 @@ void SmtSolver::WriteFile()
     operation_.GetAllString(operation_output_path_);
 }
 
-void SmtSolver:: GetOutputPath(const char *file_path, char *output, char * smt_case_name)
-{
-    int i = 0;
-    int j = 0;
-    // reach the tail of file_path
-    while((file_path[i]) != '\0')
-    {
-        if(file_path[i] == '/')
-        {
-            j = i + 1;
-        }
-        i++;
-    }
-    int m = 0;
-    while(m < j)
-    {
-        output[m] = file_path[m];
-        m++;
-    }
-    int k = 0;
-    while(m < i)
-    {
-        smt_case_name[k++] = file_path[m++];
-    }
-}
+
 
 SmtSolver::~SmtSolver() {}

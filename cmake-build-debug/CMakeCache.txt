@@ -14,15 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Builds the googlemock subproject
-BUILD_GMOCK:BOOL=ON
-
-//Builds the googletest subproject
-BUILD_GTEST:BOOL=OFF
-
-//Build shared libraries (DLLs).
-BUILD_SHARED_LIBS:BOOL=OFF
-
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
@@ -188,65 +179,10 @@ EX_BINARY_DIR:STATIC=/home/chaowyc/CLionProjects/EX/cmake-build-debug
 EX_SOURCE_DIR:STATIC=/home/chaowyc/CLionProjects/EX
 
 //Path to a program.
-PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
-
-//Path to a program.
 ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
-
-//The directory containing a CMake configuration file for Thread.
-Thread_DIR:PATH=Thread_DIR-NOTFOUND
-
-//Value Computed by CMake
-gmock_BINARY_DIR:STATIC=/home/chaowyc/CLionProjects/EX/cmake-build-debug/googletest-build/googlemock
-
-//Dependencies for the target
-gmock_LIB_DEPENDS:STATIC=general;-lpthread;
-
-//Value Computed by CMake
-gmock_SOURCE_DIR:STATIC=/home/chaowyc/CLionProjects/EX/cmake-build-debug/googletest-src/googlemock
-
-//Build all of Google Mock's own tests.
-gmock_build_tests:BOOL=OFF
-
-//Dependencies for the target
-gmock_main_LIB_DEPENDS:STATIC=general;-lpthread;
-
-//Value Computed by CMake
-googletest-distribution_BINARY_DIR:STATIC=/home/chaowyc/CLionProjects/EX/cmake-build-debug/googletest-build
-
-//Value Computed by CMake
-googletest-distribution_SOURCE_DIR:STATIC=/home/chaowyc/CLionProjects/EX/cmake-build-debug/googletest-src
-
-//Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/home/chaowyc/CLionProjects/EX/cmake-build-debug/googletest-build/googlemock/gtest
-
-//Dependencies for the target
-gtest_LIB_DEPENDS:STATIC=general;-lpthread;
-
-//Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/home/chaowyc/CLionProjects/EX/cmake-build-debug/googletest-src/googletest
-
-//Build gtest's sample programs.
-gtest_build_samples:BOOL=OFF
-
-//Build all of gtest's own tests.
-gtest_build_tests:BOOL=OFF
-
-//Disable uses of pthreads in gtest.
-gtest_disable_pthreads:BOOL=OFF
-
-//Use shared (DLL) run-time lib even when Google Test is built
-// as static lib.
-gtest_force_shared_crt:BOOL=ON
-
-//Build gtest with internal symbols hidden in shared libraries.
-gtest_hide_internal_symbols:BOOL=OFF
-
-//Dependencies for the target
-gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 
 ########################
@@ -260,9 +196,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/chaowyc/CLionProjects/EX/cmake-build-debug
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=6
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=7
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -363,7 +299,7 @@ CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RANLIB
 CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/home/chaowyc/Downloads/clion-2016.3.3/bin/cmake/share/cmake-3.6
+CMAKE_ROOT:INTERNAL=/home/chaowyc/Downloads/clion-2016.3.3/bin/cmake/share/cmake-3.7
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -394,12 +330,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.12()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//ADVANCED property for variable: PYTHON_EXECUTABLE
-PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_getconf
 ProcessorCount_cmd_getconf-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl

@@ -13,7 +13,9 @@
 #include "FilePath.h"
 
 char *SMT_file_list[MAXFILENUM];
+bool has_result[MAXFILENUM] = {false};
 char *CSV_file_list[MAXFILENUM];
+std::map<std::string, int > SMT_file_map;
 int all_SMT_case_num = 0;
 int all_CSV_file_num = 0;
 // indicate whether the given directory has subdirectories, assume it hasn't subdirectories
@@ -92,6 +94,10 @@ void TraverseDir(char* file_path)
             }
             strcpy(tmp, path);
             CSV_file_list[all_CSV_file_num++] = tmp;
+            char tmp_name[PATHLENGTH] = {'\0'};
+            char tmp_directory[PATHLENGTH] = {'\0'};
+            GetOutputPath(tmp, tmp_directory, tmp_name);
+            SMT_file_map[tmp_directory] = 1;
             continue;
         }
         //char* path = StrContact(file_path, filename->d_name);
@@ -161,6 +167,33 @@ bool IsCSV(const char *file_path)
     }
 }
 
+
+void GetOutputPath(const char *file_path, char *output, char * smt_case_name)
+{
+    int i = 0;
+    int j = 0;
+    // reach the tail of file_path
+    while((file_path[i]) != '\0')
+    {
+        if(file_path[i] == '/')
+        {
+            j = i + 1;
+        }
+        i++;
+    }
+    int m = 0;
+    while(m < j)
+    {
+        output[m] = file_path[m];
+        m++;
+    }
+    int k = 0;
+    while(m < i)
+    {
+        smt_case_name[k++] = file_path[m++];
+    }
+}
+
 void DeleteCSV()
 {
     int status;
@@ -174,4 +207,12 @@ void DeleteCSV()
     }
 }
 
+bool ContinueLastTime(char *path)
+{
+    if(SMT_file_map.find(path) != SMT_file_map.end())
+    {
+        return true;
+    }
+    return false;
+}
 
