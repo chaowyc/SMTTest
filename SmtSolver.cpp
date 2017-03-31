@@ -20,6 +20,7 @@ using namespace z3;
 
 extern int solved_case_num;
 extern int all_SMT_case_num;
+extern std::vector<std::string> abort_smt_case;
 
 void SmtSolver::test(int id)
 {
@@ -74,9 +75,13 @@ void SmtSolver::TraverseAST(int id, expr const &e)
     long int count = 1;
     if(e.is_app())
     {
+        CaluTime timer;
+
         sk.push(e);
+        timer.TimerBegin();
         while(!sk.empty())
         {
+
             expr e = sk.top();
             sk.pop();
             unsigned num = e.num_args();
@@ -131,7 +136,15 @@ void SmtSolver::TraverseAST(int id, expr const &e)
 
             if(count % 1000 == 0)
             {
-                std::cout << "thread:" << id << " stack size:" << sk.size() << std::endl;
+                timer.TimerEnd();
+                std::cout << "thread:" << id << " stack size:" << sk.size() << " time: " << timer.TimerSpan() << std::endl;
+                if(timer.TimerSpan() > 100 || count >= 150000)
+                {
+                    std::cout << "calculate time is too long " << timer.TimerSpan() << std::endl;
+                    abort_smt_case.push_back(smt_file_path_);
+                    break;
+                }
+                timer.TimerBegin();
             }
             count++;
             //std::cout << "thread:" << id << " " << count << " stack size:" << sk.size() << std::endl;

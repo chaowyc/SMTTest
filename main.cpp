@@ -27,6 +27,7 @@ using namespace std;
 //bool subdirectory_flag = false;
 
 int solved_case_num = 0;
+std::vector<std::string> abort_smt_case;
 
 int main(int argc, char *argv[])
 {
@@ -72,6 +73,28 @@ int main(int argc, char *argv[])
                 {
                     printf("%s already has result!\n", SMT_file_list[i]);
                     continue;
+                }
+            }
+        }
+        printf("Abort SMT Case:");
+        for(int i = 0; i < abort_smt_case.size(); i++)
+        {
+            printf("%s\n", abort_smt_case[i]);
+        }
+        printf("output to a file ? (y/n) \n");
+        char ch;
+        scanf("%c", &ch);
+        switch (ch)
+        {
+            case 'y':
+            {
+                printf("file name: ");
+                std::string output;
+                std::cin >> output;
+                ofstream out(output);
+                for(int i = 0; i < abort_smt_case.size(); i++)
+                {
+                    out << abort_smt_case[i] << std::endl;
                 }
             }
         }
