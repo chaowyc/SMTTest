@@ -28,6 +28,8 @@ private:
     StringInt bit_vector_;
     StringInt operand_;
     StringInt operation_;
+    template <typename T>
+            string ToString(T val);
 
 public:
 

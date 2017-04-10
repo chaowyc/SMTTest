@@ -111,7 +111,8 @@ void SmtSolver::TraverseAST(int id, expr const &e)
 
             std::string fname = f.name().str();
             int fkind = f.decl_kind();
-            std::string exp = e.to_string();
+            //std::string exp = e.to_string();
+            std::string exp = ToString(e);
             switch (fkind)
             {
                 case 1024:
@@ -264,3 +265,10 @@ void SmtSolver::WriteFile()
 
 
 SmtSolver::~SmtSolver() {}
+
+template<typename T>
+string SmtSolver::ToString(T val) {
+    stringstream stream;
+    stream << val;
+    return stream.str();
+}
