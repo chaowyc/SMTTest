@@ -7,6 +7,15 @@ from multiprocessing import Pool, Lock
 from multiprocessing import Semaphore
 from time import sleep
 
+#class baseClass():
+#    '''
+#    base class for time lengths and operations
+#    '''
+#    def __init__(self, smt2_file_path):
+#       self.smt2_file_path = smt2_file_path
+
+
+
 def nopush_solve(case):
     try:
         #set_param(verbose=15)
