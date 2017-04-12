@@ -13,9 +13,10 @@
   <component name="ChangeListManager">
     <list id="d9caa81c-75f1-44d8-aac1-da611d11bd63" name="Default" comment="finish basic function" />
     <list default="true" id="10ea2c8d-5028-482c-a3c2-e6cfb7815ef2" name="Rejected commit: Default" comment="finish basic function">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/EX" afterPath="$PROJECT_DIR$/cmake-build-debug/EX" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FilePath.cpp" afterPath="$PROJECT_DIR$/FilePath.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmtSolver.cpp" afterPath="$PROJECT_DIR$/SmtSolver.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmtSolver.h" afterPath="$PROJECT_DIR$/SmtSolver.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="57" column="68" lean-forward="true" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+            <state relative-caret-position="429">
+              <caret line="45" column="30" lean-forward="true" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -46,25 +47,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SmtSolver.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SmtSolver.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SmtSolver.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+            <state relative-caret-position="920">
+              <caret line="115" column="44" lean-forward="false" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
-                <element signature="e#7735#7747#0" expanded="true" />
+                <element signature="e#7872#7884#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5584">
-              <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -72,8 +63,8 @@
       <file leaf-file-name="SmtSolver.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SmtSolver.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+            <state relative-caret-position="225">
+              <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding>
                 <element signature="e#76#98#0" expanded="true" />
                 <element signature="e#615#627#0" expanded="true" />
@@ -82,15 +73,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="StringInt.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StringInt.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="820">
+              <caret line="55" column="49" lean-forward="false" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FilePath.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FilePath.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="178" column="9" lean-forward="true" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
+            <state relative-caret-position="360">
+              <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="16" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
-                <element signature="e#3311#3565#0" expanded="false" />
-                <element signature="e#3567#3820#0" expanded="false" />
+                <element signature="e#3323#3577#0" expanded="false" />
+                <element signature="e#3579#3832#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -160,8 +161,8 @@
         <option value="$PROJECT_DIR$/FilePath.h" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/FilePath.cpp" />
         <option value="$PROJECT_DIR$/SmtSolver.h" />
+        <option value="$PROJECT_DIR$/FilePath.cpp" />
         <option value="$PROJECT_DIR$/SmtSolver.cpp" />
       </list>
     </option>
@@ -450,10 +451,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$USER_HOME$/z3Guide/QF_BV" PASS_PARENT_ENVS_2="true" PROJECT_NAME="EX" TARGET_NAME="EX" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="EX" RUN_TARGET_NAME="EX">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="python" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -472,10 +469,14 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$USER_HOME$/Documents/constraints/cmake_smt/case11012518241.smt2" PASS_PARENT_ENVS_2="true" PROJECT_NAME="EX" TARGET_NAME="EX" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="EX" RUN_TARGET_NAME="EX">
+      <envs />
+      <method />
+    </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.EX" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="2" class="java.lang.String" itemvalue="Python.python" />
+      <item index="1" class="java.lang.String" itemvalue="Python.python" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Build All" />
     </list>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -531,12 +532,12 @@
       <workItem from="1490878710831" duration="10990000" />
       <workItem from="1490930168170" duration="9366000" />
       <workItem from="1490961785800" duration="17431000" />
-      <workItem from="1491456721428" duration="6824000" />
+      <workItem from="1491456721428" duration="17464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243175000" />
+    <option name="totallyTimeSpent" value="253815000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -556,13 +557,13 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.48787063" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4091858" sideWeight="0.5257048" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.49811321" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.38493723" sideWeight="0.4948787" order="5" side_tool="false" content_ui="tabs" x="1985" y="-4" width="1015" height="1924" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.38493723" sideWeight="0.4948787" order="5" side_tool="false" content_ui="tabs" x="65" y="24" width="1855" height="1028" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.49811321" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.112769485" sideWeight="0.49582464" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25594252" sideWeight="0.50417536" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43828452" sideWeight="0.5929919" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38726515" sideWeight="0.5929919" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -609,12 +610,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="117" />
+      <option name="time" value="122" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="SMT_file_list" language="ObjectiveC" />
         <watch expression="SMT_file_map" language="ObjectiveC" />
+        <watch expression="operand_" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
@@ -657,8 +659,8 @@
           <caret line="75" column="21" lean-forward="false" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
           <folding>
             <element signature="e#40#59#0" expanded="true" />
-            <element signature="e#3311#3565#0" expanded="false" />
-            <element signature="e#3567#3820#0" expanded="false" />
+            <element signature="e#3323#3577#0" expanded="false" />
+            <element signature="e#3579#3832#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -694,7 +696,7 @@
           <caret line="160" column="21" lean-forward="true" selection-start-line="160" selection-start-column="21" selection-end-line="160" selection-end-column="21" />
           <folding>
             <element signature="e#40#59#0" expanded="true" />
-            <element signature="e#7735#7747#0" expanded="true" />
+            <element signature="e#7872#7884#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,25 +830,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/z3++.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="554" column="57" lean-forward="false" selection-start-line="554" selection-start-column="57" selection-end-line="554" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/CL-163.15188.10_chaowyc_29.03.2017_15.08.46.hprof" />
     <entry file="file://$PROJECT_DIR$/ctpl_stl.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StringInt.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -900,48 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FilePath.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="178" column="9" lean-forward="true" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#59#0" expanded="true" />
-            <element signature="e#3311#3565#0" expanded="false" />
-            <element signature="e#3567#3820#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5584">
-          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmtSolver.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding>
-            <element signature="e#76#98#0" expanded="true" />
-            <element signature="e#615#627#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmtSolver.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
-          <folding>
-            <element signature="e#40#59#0" expanded="true" />
-            <element signature="e#7735#7747#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -950,12 +896,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5570">
+          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SmtSolver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="e#76#98#0" expanded="true" />
+            <element signature="e#615#627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/z3++.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1805" column="0" lean-forward="false" selection-start-line="1805" selection-start-column="0" selection-end-line="1805" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="57" column="68" lean-forward="true" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+        <state relative-caret-position="429">
+          <caret line="45" column="30" lean-forward="true" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FilePath.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="16" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#3323#3577#0" expanded="false" />
+            <element signature="e#3579#3832#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StringInt.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="55" column="49" lean-forward="false" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SmtSolver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="115" column="44" lean-forward="false" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#7872#7884#0" expanded="true" />
           </folding>
         </state>
       </provider>

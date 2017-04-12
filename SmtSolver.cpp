@@ -35,8 +35,8 @@ SmtSolver::SmtSolver(std::string smt_file_path)
     char tmp[PATHLENGTH] = { '\0' };
     char case_name[PATHLENGTH] = {'\0'};
     GetOutputPath(smt_file_path_.c_str(), tmp, case_name);
-    this->output_path_ = tmp;
-    this->case_name_ = case_name;
+    this->output_path_ = std::string(tmp);
+    this->case_name_ = std::string(case_name);
     this->timespan_output_path_ = output_path_ + case_name_ + ".ts.csv";
     this->bit_vector_output_path_ = output_path_ + case_name_ + ".bv.csv";
     this->operand_output_path_ = output_path_ + case_name_ + ".oa.csv";
@@ -51,7 +51,7 @@ SmtSolver::SmtSolver(std::string smt_file_path, std::string output_path)
     char case_name[PATHLENGTH] = {'\0'};
     GetOutputPath(smt_file_path.c_str(), tmp, case_name);
     //this->output_path_ = tmp;
-    this->case_name_ = case_name;
+    this->case_name_ = std::string(case_name);
     this->timespan_output_path_ = output_path_ + case_name_ + ".ts.csv";
     this->bit_vector_output_path_ = output_path_ + case_name_ + ".bv.csv";
     this->operand_output_path_ = output_path_ + case_name_ + ".oa.csv";
@@ -113,6 +113,7 @@ void SmtSolver::TraverseAST(int id, expr const &e)
             int fkind = f.decl_kind();
             //std::string exp = e.to_string();
             std::string exp = ToString(e);
+            std::cout << fkind << std::endl;
             switch (fkind)
             {
                 case 1024:
@@ -125,6 +126,7 @@ void SmtSolver::TraverseAST(int id, expr const &e)
                 {
                     // operand
                     operand_.InsertMap(fname);
+                    std::cout << fname << std::endl;
                     break;
                 }
                 default:

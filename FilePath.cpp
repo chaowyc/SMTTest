@@ -82,8 +82,9 @@ void TraverseDir(char* file_path)
         char* path = StrContact(file_path, filename->d_name);
         if(filename->d_name[0] == '.')
             continue;
-        if(IsTXT(filename->d_name))
+        if(IsTXT(filename->d_name)) {
             continue;
+        }
         if(IsCSV(filename->d_name))
         {
             char *tmp = (char*)malloc(strlen(path) + 1);
