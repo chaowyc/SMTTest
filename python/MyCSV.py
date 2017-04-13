@@ -2,7 +2,7 @@ import os
 from Stack import *
 import Switch
 from SMTCase import *
-from Global import *
+from Global import *    
 from collections import OrderedDict
 import csv
 import sys
