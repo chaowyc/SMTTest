@@ -87,7 +87,6 @@ class MyCSV():
                     all_attr[item] = index
 
         sorted_all_attr = OrderedDict(sorted(all_attr.items(), key=lambda x: x[0]))
-        print sorted_all_attr
 
         print " "
         print "Attrs number %d " % len(sorted_all_attr)
@@ -102,10 +101,13 @@ class MyCSV():
 
             field_names.append('nopush status')
             file_names_ml.append('nopush status')
+
             field_names.append('nopush time')
             file_names_ml.append('nopush time')
+
             field_names.append('push status')
             file_names_ml.append('push status')
+
             field_names.append('push time')
             file_names_ml.append('push time')
 
@@ -119,6 +121,39 @@ class MyCSV():
                 print "\r %(num1)d / %(num2)d case output" % { 'num1' : counter, 'num2' : self.file_nums / 4 },
                 sys.stdout.flush()
                 output_dict['case name'] = case_name
+                for item in sorted_all_attr.keys():
+                    if item in case_attr.operations.keys():
+                        output_dict[item] = case_attr.operations[item]
+                    else:
+                        output_dict[item] = 0
+
+                output_dict['nopush status'] = case_attr.time_span['nopush_status']
+                output_dict['nopush time'] = case_attr.time_span['nopush_time']
+                output_dict['push status'] = case_attr.time_span['push_status']
+                output_dict['push time'] = case_attr.time_span['push_time']
+
+                writer.writerow(output_dict)
+
+        with open(self.output_file + "_ml", 'w') as mlfile:
+            file_names_ml = []
+            for key in sorted_all_attr.keys():
+                file_names_ml.append(key)
+
+            file_names_ml.append('nopush status')
+
+            file_names_ml.append('nopush time')
+
+            file_names_ml.append('push status')
+
+            file_names_ml.append('push time')
+
+            writer = csv.DictWriter(mlfile, fieldnames=file_names_ml)
+            output_dict = dict()
+            counter = 0
+            for case_name, case_attr in self.smt_dict.get_iteritems():
+                counter += 1
+                print "\r %(num1)d / %(num2)d case output for ml" % { 'num1' : counter, 'num2' : self.file_nums / 4 },
+                sys.stdout.flush()
                 for item in sorted_all_attr.keys():
                     if item in case_attr.operations.keys():
                         output_dict[item] = case_attr.operations[item]
