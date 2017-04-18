@@ -1,4 +1,4 @@
-# Install script for directory: /home/chaowyc/CLionProjects/EX
+# Install script for directory: /home/rainoftime/Work/SMT/SMTTest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/chaowyc/CLionProjects/EX/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rainoftime/Work/SMT/SMTTest/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
