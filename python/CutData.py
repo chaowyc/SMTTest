@@ -67,9 +67,12 @@ def Cut(file_dir, sub_file_nums, all_file_list, all_file_nums):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print "Uasge: python CutData.py file_dir sub_file_nums"
+        print "Uasge: python CutData.py file_dir"
     else:
         all_file_lists, all_file_nums = OpenDir(sys.argv[1])
         print "%(num)d files" % {'num' : all_file_nums}
         num = raw_input("sub_file_nums ->: ")
-        Cut(sys.argv[1], num, all_file_lists, all_file_nums)
+        if num > 0:
+            Cut(sys.argv[1], num, all_file_lists, all_file_nums)
+        else:
+            print "out of program"
