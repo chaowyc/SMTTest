@@ -170,9 +170,10 @@ void SmtSolver::PushSolver()
     {
         aa = Z3_parse_smtlib2_file(ctx, smt_file_path_.c_str(), 0, 0, 0, 0, 0, 0);
     }
-    catch (std::exception& e)
+    catch (z3::exception& ex)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << ex.msg() << std::endl;
+        throw ex;
     }
     expr e(ctx, aa);
     s.push();
@@ -199,9 +200,10 @@ void SmtSolver::NoPushSolver(int id)
     {
         aa = Z3_parse_smtlib2_file(ctx, smt_file_path_.c_str(), 0, 0, 0, 0, 0, 0);
     }
-    catch (std::exception& e)
+    catch (z3::exception& ex)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << ex.msg() << std::endl;
+        throw ex;
     }
     expr e(ctx, aa);
     //s.push();
