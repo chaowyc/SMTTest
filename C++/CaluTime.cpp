@@ -21,7 +21,7 @@ void CaluTime::TimerEnd()
 double CaluTime::TimerSpan()
 {
     timersub(&t_end_, &t_start_, &t_result_);
-    result_ = t_result_.tv_sec + (1.0 * t_result_.tv_usec) / 100000;
+    result_ = t_result_.tv_sec + (1.0 * t_result_.tv_usec) / 1000000;
     return result_;
 }
 
