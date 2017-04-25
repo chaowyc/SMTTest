@@ -1,3 +1,4 @@
+#coding:utf-8
 import os
 from Stack import *
 import Switch
@@ -10,11 +11,12 @@ import sys
 
 class MyCSV():
 
-    def __init__(self, input_directory, output_file):
+    def __init__(self, input_directory, output_file, b=None):
         self.input_directory = input_directory
         self.output_file = output_file
         self.smt_dict = Global()
         self.smt_case_status = {0 : "sat", 1 : "unsat", 2 : "unknown"}
+        self.whitelists = b
         self.OpenDirectory()
 
 
@@ -34,15 +36,19 @@ class MyCSV():
         files_stack.push(self.input_directory)
         while not files_stack.isEmpty():
             tmp_file = files_stack.pop()
-            if self.__isDirecory(tmp_file):
-                for item in os.listdir(tmp_file):
-                    if item[0] == '.':
-                        pass
-                    else:
-                        files_stack.push(tmp_file + os.sep + item)
+            if tmp_file.split('/')[-1] in self.whitelists:
+                print "%s is skiped.." % tmp_file
+                continue
             else:
-                self.file_nums += 1
-                self.PutTogether(tmp_file)
+                if self.__isDirecory(tmp_file):
+                    for item in os.listdir(tmp_file):
+                        if item[0] == '.':
+                            pass
+                        else:
+                            files_stack.push(tmp_file + os.sep + item)
+                else:
+                    self.file_nums += 1
+                    self.PutTogether(tmp_file)
 
     def PutTogether(self, tmp_file_path):
         if not tmp_file_path.endswith('.csv'):
@@ -72,44 +78,33 @@ class MyCSV():
             self.smt_dict.insert(smt_case_file_name, tmp_smt_case)
 
     def OutPutToFile(self):
-        all_attr = dict()
-        index = 0
-        counter = 0
-        for case_name, case_attr in self.smt_dict.get_iteritems():
-            counter += 1
-            print "\r%(num1)d / %(num2)d case processing" % {'num1': counter, 'num2': self.file_nums / 4},
-            sys.stdout.flush()
-            for item in case_attr.operations.keys():
-                if all_attr.has_key(item):
-                    pass
-                else:
-                    index += 1
-                    all_attr[item] = index
+        all_attr = []
 
-        sorted_all_attr = OrderedDict(sorted(all_attr.items(), key=lambda x: x[0]))
+        with open("./Attr.txt", 'r') as attr:
+            for line in attr:
+                line = line.strip()
+                all_attr.append(line)
+
+        #sorted_all_attr = OrderedDict(sorted(all_attr.items(), key=lambda x: x[0]))
+
 
         print " "
-        print "Attrs number %d " % len(sorted_all_attr)
+        print "Attrs number %d " % len(all_attr)
 
         with open(self.output_file, 'w') as csvfile:
 
             field_names = ['case name']
             file_names_ml = []
-            for key in sorted_all_attr.keys():
+            for key in all_attr:
                 field_names.append(key)
-                file_names_ml.append(key)
 
             field_names.append('nopush status')
-            file_names_ml.append('nopush status')
 
             field_names.append('nopush time')
-            file_names_ml.append('nopush time')
 
             field_names.append('push status')
-            file_names_ml.append('push status')
 
             field_names.append('push time')
-            file_names_ml.append('push time')
 
             writer = csv.DictWriter(csvfile, fieldnames=field_names)
             writer.writeheader()
@@ -121,7 +116,7 @@ class MyCSV():
                 print "\r %(num1)d / %(num2)d case output" % { 'num1' : counter, 'num2' : self.file_nums / 4 },
                 sys.stdout.flush()
                 output_dict['case name'] = case_name
-                for item in sorted_all_attr.keys():
+                for item in all_attr:
                     if item in case_attr.operations.keys():
                         output_dict[item] = case_attr.operations[item]
                     else:
@@ -136,7 +131,7 @@ class MyCSV():
 
         with open(self.output_file + "_ml", 'w') as mlfile:
             file_names_ml = []
-            for key in sorted_all_attr.keys():
+            for key in all_attr:
                 file_names_ml.append(key)
 
             file_names_ml.append('nopush status')
@@ -154,7 +149,7 @@ class MyCSV():
                 counter += 1
                 print "\r %(num1)d / %(num2)d case output for ml" % { 'num1' : counter, 'num2' : self.file_nums / 4 },
                 sys.stdout.flush()
-                for item in sorted_all_attr.keys():
+                for item in all_attr:
                     if item in case_attr.operations.keys():
                         output_dict[item] = case_attr.operations[item]
                     else:

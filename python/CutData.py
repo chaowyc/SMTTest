@@ -42,7 +42,6 @@ def Index(num):
 def Cut(file_dir, sub_file_nums, all_file_list, all_file_nums):
 
     sub_file_nums = int(sub_file_nums)
-
     output_dir, output_name = ResDir(file_dir)
     output_path = output_dir + os.sep + output_name + "_cuted"
     os.mkdir(output_path)
