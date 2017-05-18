@@ -48,6 +48,7 @@ class MyCSV():
                             files_stack.push(tmp_file + os.sep + item)
                 else:
                     self.file_nums += 1
+                    print self.file_nums
                     self.PutTogether(tmp_file)
 
     def PutTogether(self, tmp_file_path):
