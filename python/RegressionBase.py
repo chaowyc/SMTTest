@@ -3,9 +3,6 @@ from sklearn.metrics import confusion_matrix, classification_report, precision_r
 from sklearn import preprocessing
 import numpy as np
 from sklearn.svm.classes import SVR
-import matplotlib
-matplotlib.use('agg')
-
 import matplotlib.pyplot as plt
 import sys
 from matplotlib.backends.backend_pdf import PdfPages
@@ -29,32 +26,40 @@ class RegressionBase():
         return return_value
 
     @staticmethod
-    def PlotPRCurve(x, y0, y1, z0, z1):
-        figure, axarr = plt.subplots(2, sharex=True)
+    def PlotPRCurve(timeout, actual_y, predict_y, class0precision, class1precision, class0recall, class1recall):
         #pdf_output = PdfPages("SVR_PR.pdf")
 
-        axarr[0].set_title('Timeout Class(Class 0) Precision/Recall')
+        main_figure = plt.figure()
+        ax1 = plt.subplot2grid((3, 9), (0, 0), colspan=6)
+        ax2 = plt.subplot2grid((3, 9), (1, 0), colspan=6)
+        ax3 = plt.subplot2grid((3, 9), (2, 0), colspan=6)
+        ax4 = plt.subplot2grid((3, 9), (0, 6), colspan=3, rowspan=2)
 
-        axarr[0].plot(x, y0, label="Precision")
-        for i, j in zip(x, y0):
-            axarr[0].annotate(str(j), xy=(i, j))
+        ax1.set_title("Regression")
+        ax1.plot(actual_y, label="Actual")
+        ax1.plot(predict_y, label="Predict")
+        ax1.legend()
 
-        axarr[0].plot(x, z0, label='Recall')
-        for i, j in zip(x, z0):
-            axarr[0].annotate(str(j), xy=(i, j))
+        ax2.set_title('Timeout Class(Class 0) Precision/Recall')
+        ax2.plot(timeout, class0precision, label="Precision")
+        ax2.plot(timeout, class0recall, label="Recall")
+        ax2.legend()
 
-        axarr[1].set_title('Non-Timeout Class(Class 1)Precision/Recall')
-        axarr[1].plot(x, y1, label="Precision")
-        for i, j in zip(x, y1):
-            axarr[1].annotate(str(j), xy=(i, j))
-        axarr[1].plot(x, z1, label="Recall")
-        for i, j in zip(x, z1):
-            axarr[1].annotate(str(j), xy=(i, j))
+        ax3.set_title('Non-Timeout Class(Class 1)Precision/Recall')
+        ax3.plot(timeout, class1precision, label="Precision")
+        ax3.plot(timeout, class1recall, label="Recall")
+        ax3.legend()
 
-        plt.legend(bbox_to_anchor=(0.75, 0.3), loc=2, mode="expand", borderaxespad=0.)
-        plt.show()
-        #figure.savefig(pdf_output, format='pdf')
-        figure.savefig("SVR_PR.png")
+        ax4.scatter(actual_y, predict_y)
+        ax4.plot([actual_y.min(), actual_y.max()], [actual_y.min(), actual_y.max()], 'k--', lw=4)
+
+
+        plt.tight_layout()
+
+
+
+        #main_figure.savefig(pdf_output, format='pdf')
+        main_figure.savefig("SVR_PR.png")
         #pdf_output.close()
 
     def LoadData(self):

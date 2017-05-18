@@ -116,5 +116,5 @@ if __name__ == '__main__':
     #dd = MySVR(sys.argv[1])
     #dd.Demo()
 
-    tt = MySVR(sys.argv[1], sys.argv[2])
-    tt.Test()
+    tt = MySVR(sys.argv[1])
+    tt.Demo()

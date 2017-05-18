@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import sys
 from matplotlib.backends.backend_pdf import PdfPages
 
+from sklearn import linear_model
 
 class MySVM():
     def __init__(self, train_data_path, test_data_path=None):
@@ -66,7 +67,8 @@ class MySVM():
 
     def Core(self, train_x, train_y, test_x, test_y):
 
-        svr_rbf = SVC(C=1e3, gamma=0.1, verbose=True)
+        #svr_rbf = SVC(C=1e3, gamma=0.1, verbose=True)
+        svr_rbf = linear_model.LogisticRegression()
         svr_rbf.fit(train_x, train_y)
         Y_rbf_pre = svr_rbf.predict(test_x)
 
