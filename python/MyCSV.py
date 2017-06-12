@@ -81,7 +81,7 @@ class MyCSV():
     def OutPutToFile(self):
         all_attr = []
 
-        with open("./Attr.txt", 'r') as attr:
+        with open("Attr.txt", 'r') as attr:
             for line in attr:
                 line = line.strip()
                 all_attr.append(line)
@@ -103,10 +103,6 @@ class MyCSV():
 
             field_names.append('nopush time')
 
-            field_names.append('push status')
-
-            field_names.append('push time')
-
             writer = csv.DictWriter(csvfile, fieldnames=field_names)
             writer.writeheader()
             output_dict = dict()
@@ -125,8 +121,6 @@ class MyCSV():
 
                 output_dict['nopush status'] = case_attr.time_span['nopush_status']
                 output_dict['nopush time'] = case_attr.time_span['nopush_time']
-                output_dict['push status'] = case_attr.time_span['push_status']
-                output_dict['push time'] = case_attr.time_span['push_time']
 
                 writer.writerow(output_dict)
 
@@ -139,9 +133,6 @@ class MyCSV():
 
             file_names_ml.append('nopush time')
 
-            file_names_ml.append('push status')
-
-            file_names_ml.append('push time')
 
             writer = csv.DictWriter(mlfile, fieldnames=file_names_ml)
             output_dict = dict()
@@ -158,7 +149,5 @@ class MyCSV():
 
                 output_dict['nopush status'] = case_attr.time_span['nopush_status']
                 output_dict['nopush time'] = case_attr.time_span['nopush_time']
-                output_dict['push status'] = case_attr.time_span['push_status']
-                output_dict['push time'] = case_attr.time_span['push_time']
 
                 writer.writerow(output_dict)

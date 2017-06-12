@@ -1,12 +1,14 @@
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report, precision_recall_fscore_support
 import numpy as np
+from sklearn import preprocessing
 from sklearn.svm.classes import SVC
 import matplotlib.pyplot as plt
 import sys
 from matplotlib.backends.backend_pdf import PdfPages
-
+from sklearn.externals import joblib
 from sklearn import linear_model
+from sklearn_porter import Porter
 
 class MySVM():
     def __init__(self, train_data_path, test_data_path=None):
@@ -57,25 +59,42 @@ class MySVM():
         X_s = all_data[:, : col - 4]
         Y_s = all_data[:, -1]
 
-        for x in [x / 10.0 for x in range(10, 51, 1)]:
-            Y = self.Timeout(Y_s, x)
-            X_train, X_test, Y_train, Y_test = train_test_split(X_s, Y, test_size=0.2)
-            self.Core(X_train, Y_train, X_test, Y_test)
+        Y = self.Timeout(Y_s, 1)
+        X_train, X_test, Y_train, Y_test = train_test_split(X_s, Y, test_size=0.2)
+        self.Core(X_train, Y_train, X_test, Y_test)
 
+    def Test(self):
+        train_data = np.loadtxt(self.train_data_path, delimiter=',')
+        test_data = np.loadtxt(self.test_data_path, delimiter=',')
 
+        train_row, train_col = train_data.shape
+        test_row, test_col = test_data.shape
+
+        print "train : test = %(num1)d : %(num2)d " % { 'num1' : (int(train_row) / int(test_row)), 'num2' : 1}
+
+        Train_X = preprocessing.scale(train_data[:, :train_col - 2])
+        Train_Y = self.Timeout(train_data[:, -1], 1)
+
+        Test_X = preprocessing.scale(test_data[:, :test_col - 2])
+        Test_Y = self.Timeout(test_data[:, -1], 1)
+        self.Core(Train_X, Train_Y, Test_X, Test_Y)
 
 
     def Core(self, train_x, train_y, test_x, test_y):
 
-        #svr_rbf = SVC(C=1e3, gamma=0.1, verbose=True)
-        svr_rbf = linear_model.LogisticRegression()
+        svr_rbf = SVC(C=1e3, gamma=0.1, verbose=True)
+        #svr_rbf = linear_model.LogisticRegression()
         svr_rbf.fit(train_x, train_y)
         Y_rbf_pre = svr_rbf.predict(test_x)
+        #joblib.dump(svr_rbf, "svm.model")
 
         precision0 = []
         precision1 = []
         recall0 = []
         recall1 = []
+        #with open("result.push.txt", 'w') as predict_output:
+        #    predict_output.write(Y_rbf_pre)
+        #    predict_output.close()
 
         labels = [1, 0]
         target_names = ['class 1', 'class 0']
@@ -92,7 +111,27 @@ class MySVM():
         print classification_report(y_pred=np.array(Y_rbf_pre), y_true=np.array(test_y), labels=labels,
                                         target_names=target_names)
         #self.PlotPRCurve([x / 10.0 for x in range(10, 51, 1)], precision0, precision1, recall0, recall1)
+    def Predict(self):
+        svcc = joblib.load("svm.model")
+        output = Porter(svcc, language='c').export()
+        with open("cmodel", 'w') as ouput:
+            ouput.write(str(output))
+        '''
+        test = [ 81, 718, 1,17, 28,0, 6, 14, 12, 16, 39, 64, 34, 102, 63,0, 10,0, 12,0, 14,0,0,0,0, 12,0,0,0,0,0,0]
+        test_data = np.loadtxt(self.test_data_path, delimiter=',')
+        test_row, test_col = test_data.shape
+        Test_X = preprocessing.scale(test_data[:, :test_col - 4])
+        Test_Y = self.Timeout(test_data[:, -1], 1)
+        print Test_Y
+        res = svcc.predict(Test_X)
+        print res
+        with open("result.push.txt", 'w') as predict_output:
+            for i in range(0, test_row):
+                predict_output.writelines(str(res[i]) + " " + str(Test_Y[i]) + '\n')
+        '''
 
 if __name__ == "__main__":
-    dd = MySVM(sys.argv[1])
-    dd.Demo()
+    dd = MySVM(sys.argv[1], sys.argv[2])
+    dd.Test()
+    #dd.Demo()
+    #dd.Predict()

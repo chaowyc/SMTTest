@@ -70,7 +70,7 @@ if __name__ == "__main__":
     else:
         all_file_lists, all_file_nums = OpenDir(sys.argv[1])
         print "%(num)d files" % {'num' : all_file_nums}
-        num = raw_input("sub_file_nums ->: ")
+        num = int(raw_input("sub_file_nums ->: "))
         if num > 0:
             Cut(sys.argv[1], num, all_file_lists, all_file_nums)
         else:

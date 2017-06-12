@@ -76,7 +76,5 @@ class SMTCase():
                     if row.startswith('push'):
                         continue
                     items = row.strip().split('\t')
-                    self.time_span['push_status'] = items[0]
-                    self.time_span['push_time'] = items[1]
-                    self.time_span['nopush_status'] = items[2]
-                    self.time_span['nopush_time'] = items[3]
+                    self.time_span['nopush_status'] = items[0]
+                    self.time_span['nopush_time'] = items[1]
